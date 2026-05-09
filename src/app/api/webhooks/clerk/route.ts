@@ -5,6 +5,8 @@ import prisma from "@/lib/prisma";
 export async function POST(req: Request) {
   const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
 
+  // console.log("Webhook hit");
+
   if (!WEBHOOK_SECRET) {
     throw new Error("Missing CLERK_WEBHOOK_SECRET");
   }
@@ -34,6 +36,9 @@ export async function POST(req: Request) {
       "svix-timestamp": svixTimestamp,
       "svix-signature": svixSignature,
     });
+
+    // console.log(evt.type);
+    // console.log(evt.data);
   } catch (err) {
     console.error("Webhook verification failed", err);
 
