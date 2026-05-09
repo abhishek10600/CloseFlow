@@ -3,8 +3,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ReplyForge",
-  description: "AI Cold Outreach SaaS",
+  title: "CloseFlow",
+  description: "Don't Lose Clients",
 };
 
 export default function RootLayout({
